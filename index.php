@@ -2,7 +2,19 @@
  session_start();
     include 'connect/server.php';
 
+    if(empty($_SESSION["user_id"])){
 
+      header("location: index.php"); 
+  }else{
+    header("location:dashboard.php");
+  }
+
+  if(empty($_SESSION["department_id"])){
+
+      header("location: index.php"); 
+  }else{
+    header("location:dashboard.php");
+  }
   require 'PHPMailer/PHPMailerAutoload.php';
    $mail = new PHPMailer();
 
